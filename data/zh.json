@@ -1,7 +1,11 @@
 {
-  "welcome": "欢迎",
+  "welcome": "Whoops 隐私输入法_",
   "logo": "Logo",
   "home": "首页",
   "about": "关于",
-  "not_found": "404 - Seite nicht gefunden"
+  "not_found": "404 - Seite nicht gefunden",
+  "sub_title": "安全可靠，随心畅聊",
+  "security": "加密聊天，保护隐私安全",
+  "ids": "多平台身份支持，哪儿都能用",
+  "password": "离线账户，信息更安全"
 }

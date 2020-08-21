@@ -11,15 +11,10 @@ const Header = () => (
 			<StyledHeader>
 				<Navbar as={Container}>
 					<Logo as={Link} to="/">
-						<FormattedMessage id="logo" />
+						{/* <FormattedMessage id="logo" /> */}
+						<img src={require('../../../images/logo.png')} />
 					</Logo>
 					<Links>
-						<Link to="/">
-							<FormattedMessage id="home" />
-						</Link>
-						<Link to="/about">
-							<FormattedMessage id="about" />
-						</Link>
 						<SelectLanguage lang={lang} toggleLanguage={toggleLanguage} />
 					</Links>
 				</Navbar>
