@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import { FormattedMessage } from 'react-intl'
 import { Context, Container } from '../../common'
 import SelectLanguage from './SelectLanguage'
 import { Navbar, Links, StyledHeader, Logo } from './styles'
@@ -11,7 +10,6 @@ const Header = () => (
 			<StyledHeader>
 				<Navbar as={Container}>
 					<Logo as={Link} to="/">
-						{/* <FormattedMessage id="logo" /> */}
 						<img src={require('../../../images/logo.png')} />
 					</Logo>
 					<Links>

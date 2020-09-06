@@ -4,6 +4,7 @@ import { FormattedMessage } from 'react-intl';
 import { Layout, Container } from '../components/common';
 import SEO from '../components/common/SEO';
 import Header from '../components/theme/Header';
+import bgImg from '../images/bg.png'
 
 const IndexPage = () => (
   <Layout>
@@ -46,8 +47,11 @@ const IndexPage = () => (
 
 // 整体背景
 const Bodys = styled.div`
+  width: 100%;
   min-height: 100vh;
-  background-color: #0a1314;
+  background: #0A1314 url(${bgImg}) top center;
+  background-size: cover
+
 `;
 // 欢迎文字
 const Welcome = styled.div`
