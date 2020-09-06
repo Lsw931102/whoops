@@ -4,7 +4,6 @@ import { FormattedMessage } from 'react-intl';
 import { Layout, Container } from '../components/common';
 import SEO from '../components/common/SEO';
 import Header from '../components/theme/Header';
-import bgImg from '../images/bg.png'
 
 const IndexPage = () => (
   <Layout>
@@ -19,7 +18,7 @@ const IndexPage = () => (
       </SubTitles>
       <DownLoads as={Container}>
         <img src={require('../images/appStore.png')} />
-        <img src={require('../images/googlePay.png')} />
+        <img src={`googlePay.png`} />
       </DownLoads>
       <Characteristics as={Container}>
         <CharacteristicItem>
@@ -41,6 +40,7 @@ const IndexPage = () => (
           <FormattedMessage id="password" />
         </CharacteristicItem>
       </Characteristics>
+      <Footer><p>2020 Whoops, All Rights Recerved.</p></Footer>
     </Bodys>
   </Layout>
 );
@@ -49,7 +49,7 @@ const IndexPage = () => (
 const Bodys = styled.div`
   width: 100%;
   min-height: 100vh;
-  background: #0A1314 url(${bgImg}) top center;
+  background: #0A1314 url('bg.png') top center;
   background-size: cover
 
 `;
@@ -140,6 +140,20 @@ const Orange = styled(CharacteristicItem)`
     width: 64px;
     height: 43px;
     margin: 0 auto;
+  }
+`;
+
+// 底部
+const Footer = styled.div`
+  position: fixed;
+  bottom: 20px;
+  color: #fff;
+  font-size: 12px;
+  width: 100%;
+
+  p {
+    width: 100%;
+    text-align: center;
   }
 `;
 

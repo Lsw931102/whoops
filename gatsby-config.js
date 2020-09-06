@@ -12,7 +12,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-google-fonts',
       options: {
-        fonts: ['Cairo', 'Roboto']
+        fonts: ['Roboto']
       }
     },
     {

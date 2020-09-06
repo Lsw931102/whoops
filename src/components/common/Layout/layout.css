@@ -3,12 +3,13 @@ html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
-body {
+body, p, img {
   margin: 0;
+  padding: 0;
 }
 
 html {
-  font: 112.5%/1.45em georgia, serif;
+  font: georgia, serif;
   box-sizing: border-box;
   overflow-y: scroll;
 }

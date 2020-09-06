@@ -96,4 +96,4 @@ export const TriImg = styled.img`
 
 export const TriUp = styled(TriImg)`
   transform: rotate(180deg)
-`
+`;
