@@ -2,13 +2,18 @@ const config = require('./data/config')
 
 module.exports = {
   siteMetadata: {
-    site_url: config.url
+    site_url: config.url,
+    title: `Whoops`,
+    description: `Privacy Protection`,
+    author: `whoops`
   },
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-styled-components',
     'gatsby-plugin-netlify',
     'gatsby-plugin-catch-links',
+    'gatsby-plugin-offline',
+    'gatsby-source-filesystem',
     {
       resolve: 'gatsby-plugin-google-fonts',
       options: {
@@ -38,8 +43,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'Gatsby',
-        short_name: 'Gatsby',
+        name: 'Whoops',
+        short_name: 'Privacy Protection',
         start_url: '/',
         background_color: config.backgroundColor,
         theme_color: config.themeColor,
@@ -57,7 +62,6 @@ module.exports = {
           }
         ]
       }
-    },
-    'gatsby-plugin-offline'
+    }
   ]
 }

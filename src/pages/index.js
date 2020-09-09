@@ -9,13 +9,13 @@ import UserAgreement from '../components/agreement/userAgreement'
 const IndexPage = () => (
   <Layout>
     <Bodys>
-      <SEO title="welcome" />
+      <SEO title='welcome' />
       <Header />
       <Welcome as={Container}>
-        <FormattedMessage id="welcome" />
+        <FormattedMessage id='welcome' />
       </Welcome>
       <SubTitles as={Container}>
-        <FormattedMessage id="sub_title" />
+        <FormattedMessage id='sub_title' />
       </SubTitles>
       <DownLoads as={Container}>
         <img src={require('../images/appStore.png')} />
@@ -26,19 +26,19 @@ const IndexPage = () => (
           <Imgs as={Pink}>
             <img src={require('../images/security.png')} />
           </Imgs>
-          <FormattedMessage id="security" />
+          <FormattedMessage id='security' />
         </CharacteristicItem>
         <CharacteristicItem>
           <Imgs as={Green}>
             <img src={require('../images/ids.png')} />
           </Imgs>
-          <FormattedMessage id="ids" />
+          <FormattedMessage id='ids' />
         </CharacteristicItem>
         <CharacteristicItem>
           <Imgs as={Orange}>
             <img src={require('../images/password.png')} />
           </Imgs>
-          <FormattedMessage id="password" />
+          <FormattedMessage id='password' />
         </CharacteristicItem>
       </Characteristics>
       <Footer>
@@ -57,7 +57,7 @@ const IndexPage = () => (
       <UserAgreement />
     </Bodys>
   </Layout>
-);
+)
 
 // 整体背景
 const Bodys = styled.div`
@@ -77,7 +77,7 @@ const Welcome = styled.div`
   line-height: 60px;
   color: #ffffff;
   margin-bottom: 40px;
-`;
+`
 // 小标题文字
 const SubTitles = styled.div`
   text-align: center;
@@ -88,7 +88,7 @@ const SubTitles = styled.div`
   font-size: 28px;
   line-height: 28px;
   margin-bottom: 60px;
-`;
+`
 // 下载按钮
 const DownLoads = styled.div`
   display: flex;
@@ -99,13 +99,13 @@ const DownLoads = styled.div`
     height: 58px;
     margin-right: 10px;
   }
-`;
+`
 // 特色
 const Characteristics = styled.div`
   display: flex;
   justify-content: space-around;
   width: 800px;
-`;
+`
 const CharacteristicItem = styled.div`
   display: flex;
   flex-direction: column;
@@ -116,7 +116,7 @@ const CharacteristicItem = styled.div`
   font-size: 16px;
   line-height: 16px;
   text-align: center;
-`;
+`
 const Imgs = styled.div`
   width: 100px;
   height: 100px;
@@ -127,7 +127,7 @@ const Imgs = styled.div`
   justify-content: center;
   margin: auto;
   margin-bottom: 40px;
-`;
+`
 const Pink = styled(CharacteristicItem)`
   border: 1px solid #b661f2;
   img {
@@ -136,7 +136,7 @@ const Pink = styled(CharacteristicItem)`
     height: 60px;
     margin: 0 auto;
   }
-`;
+`
 const Green = styled(CharacteristicItem)`
   border: 1px solid #61f2be;
   img {
@@ -145,7 +145,7 @@ const Green = styled(CharacteristicItem)`
     height: 64px;
     margin: 0 auto;
   }
-`;
+`
 const Orange = styled(CharacteristicItem)`
   border: 1px solid #f27961;
   img {
@@ -154,7 +154,7 @@ const Orange = styled(CharacteristicItem)`
     height: 43px;
     margin: 0 auto;
   }
-`;
+`
 
 // 底部
 const Footer = styled.div`
@@ -172,6 +172,6 @@ const Footer = styled.div`
       cursor: pointer;
     }
   }
-`;
+`
 
-export default IndexPage;
+export default IndexPage
