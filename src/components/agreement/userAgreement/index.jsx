@@ -1,14 +1,26 @@
 import React from 'react';
 import styled from 'styled-components';
+import { FormattedMessage } from 'react-intl';
 
 const UserAgreement = () => (
   <AgreementBox>
     <TitleBox>
-      <p>用户协议</p>
+      <p>
+        <FormattedMessage id={'uaTitle'} />
+      </p>
       <img src={require('../../../images/close.png')} />
     </TitleBox>
+    <ContentBox>{retrunTexts()}</ContentBox>
   </AgreementBox>
 );
+
+const retrunTexts = () => {
+  let lists = [];
+  for (let i = 1; i < 137; i++) {
+    lists.push(<FormattedMessage id={`ua${i}`} />);
+  }
+  return <Contents>{lists}</Contents>;
+};
 
 const AgreementBox = styled.div`
   width: 700px;
@@ -36,7 +48,34 @@ const TitleBox = styled.div`
   img {
     width: 20px;
     height: 20px;
+    cursor: pointer;
   }
+`;
+
+const ContentBox = styled.div`
+  width: 100%;
+  height: calc(700px - 112px);
+  overflow-y: auto;
+`;
+
+const Contents = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  color: #292929;
+  span {
+    margin-bottom: 28px;
+  }
+`;
+
+const TitleType = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 `;
 
 export default UserAgreement;
