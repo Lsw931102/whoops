@@ -56,6 +56,17 @@ const ContentBox = styled.div`
   width: 100%;
   height: calc(700px - 112px);
   overflow-y: auto;
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background:#E0E0E0;
+}
+
+  
 `;
 
 const Contents = styled.div`

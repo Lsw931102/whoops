@@ -13,7 +13,7 @@ const Header = () => (
 						<img src={require('../../../images/logo.png')} />
 					</Logo>
 					<Links>
-						{/* <SelectLanguage lang={lang} toggleLanguage={toggleLanguage} /> */}
+						<SelectLanguage lang={lang} toggleLanguage={toggleLanguage} />
 					</Links>
 				</Navbar>
 			</StyledHeader>
