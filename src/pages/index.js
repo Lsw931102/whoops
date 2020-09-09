@@ -4,6 +4,7 @@ import { FormattedMessage } from 'react-intl';
 import { Layout, Container } from '../components/common';
 import SEO from '../components/common/SEO';
 import Header from '../components/theme/Header';
+import UserAgreement from '../components/agreement/userAgreement'
 
 const IndexPage = () => (
   <Layout>
@@ -40,7 +41,20 @@ const IndexPage = () => (
           <FormattedMessage id="password" />
         </CharacteristicItem>
       </Characteristics>
-      <Footer><p>2020 Whoops, All Rights Recerved.</p></Footer>
+      <Footer>
+        <p>
+          <FormattedMessage id="footerText" />
+          <label>
+            <FormattedMessage id="userAgreement" />
+          </label>
+          <FormattedMessage id="and" />
+          <label>
+            <FormattedMessage id="privacy" />
+          </label>
+          <FormattedMessage id="stop" />
+        </p>
+      </Footer>
+      <UserAgreement />
     </Bodys>
   </Layout>
 );
@@ -49,9 +63,8 @@ const IndexPage = () => (
 const Bodys = styled.div`
   width: 100%;
   min-height: 100vh;
-  background: #0A1314 url('bg.png') top center;
-  background-size: cover
-
+  background: #0a1314 url('bg.png') top center;
+  background-size: cover;
 `;
 // 欢迎文字
 const Welcome = styled.div`
@@ -147,13 +160,17 @@ const Orange = styled(CharacteristicItem)`
 const Footer = styled.div`
   position: fixed;
   bottom: 20px;
-  color: #fff;
+  color: rgba(255, 255, 255, 0.8);
   font-size: 12px;
   width: 100%;
 
   p {
     width: 100%;
     text-align: center;
+    label {
+      text-decoration: underline;
+      cursor: pointer;
+    }
   }
 `;
 
