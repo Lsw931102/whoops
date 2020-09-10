@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { FormattedMessage } from 'react-intl';
 import { Layout, Container } from '../components/common';
@@ -7,6 +7,13 @@ import Header from '../components/theme/Header';
 import UserAgreement from '../components/agreement/userAgreement';
 
 const IndexPage = () => {
+  const [show, setShow] = useState(false);
+  const [agreementType, setAgreementType] = useState('ua');
+
+  const showAgreement = (type) => {
+    setAgreementType(type);
+    setShow(!show);
+  };
   return (
     <Layout>
       <Bodys>
@@ -45,18 +52,17 @@ const IndexPage = () => {
         <Footer>
           <p>
             <FormattedMessage id="footerText" />
-            <label>
+            <label onClick={() => showAgreement('ua')}>
               <FormattedMessage id="userAgreement" />
             </label>
             <FormattedMessage id="and" />
-            <label>
+            <label onClick={() => showAgreement('privacy')}>
               <FormattedMessage id="privacy" />
             </label>
             <FormattedMessage id="stop" />
           </p>
         </Footer>
-        {/* <UserAgreement agreementType="ua" />
-        <UserAgreement agreementType="privacy" /> */}
+        {show && <UserAgreement agreementType={agreementType} showAgreement={showAgreement} />}
       </Bodys>
     </Layout>
   );
