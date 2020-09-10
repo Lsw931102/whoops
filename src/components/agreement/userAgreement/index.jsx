@@ -2,24 +2,27 @@ import React from 'react';
 import styled from 'styled-components';
 import { FormattedMessage } from 'react-intl';
 
-const UserAgreement = () => (
-  <AgreementBox>
-    <TitleBox>
-      <p>
-        <FormattedMessage id={'uaTitle'} />
-      </p>
-      <img src={require('../../../images/close.png')} />
-    </TitleBox>
-    <ContentBox>{retrunTexts()}</ContentBox>
-  </AgreementBox>
-);
+const UserAgreement = ({ agreementType }) => {
+  const retrunTexts = () => {
+    let num = agreementType == 'ua' ? 137 : 163;
+    let lists = [];
+    for (let i = 1; i < num; i++) {
+      lists.push(<FormattedMessage id={`${agreementType}${i}`} key={i} />);
+    }
+    return <Contents>{lists}</Contents>;
+  };
 
-const retrunTexts = () => {
-  let lists = [];
-  for (let i = 1; i < 137; i++) {
-    lists.push(<FormattedMessage id={`ua${i}`} />);
-  }
-  return <Contents>{lists}</Contents>;
+  return (
+    <AgreementBox>
+      <TitleBox>
+        <p>
+          <FormattedMessage id={agreementType == 'ua' ? 'uaTitle' : 'privacyTitle'} />
+        </p>
+        <img src={require('../../../images/close.png')} />
+      </TitleBox>
+      <ContentBox>{retrunTexts()}</ContentBox>
+    </AgreementBox>
+  );
 };
 
 const AgreementBox = styled.div`
@@ -61,12 +64,10 @@ const ContentBox = styled.div`
     width: 6px;
   }
 
-::-webkit-scrollbar-thumb {
-  border-radius: 5px;
-  background:#E0E0E0;
-}
-
-  
+  ::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: #e0e0e0;
+  }
 `;
 
 const Contents = styled.div`
