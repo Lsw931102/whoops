@@ -10,7 +10,7 @@ const Agreement = () => {
   return (
     <Layout>
       <Bodys>
-        <SEO title="agreement" />
+        <SEO title="welcome" />
         <Header />
 				<UserAgreement agreementType='ua' />
       </Bodys>

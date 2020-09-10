@@ -10,7 +10,7 @@ const Privacy = () => {
   return (
     <Layout>
       <Bodys>
-        <SEO title="privacy" />
+        <SEO title="welcome" />
         <Header />
 				<UserAgreement agreementType='privacy' />
       </Bodys>
