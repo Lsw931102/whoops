@@ -1,19 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'gatsby';
 import { FormattedMessage } from 'react-intl';
 import { Layout, Container } from '../components/common';
 import SEO from '../components/common/SEO';
 import Header from '../components/theme/Header';
-import UserAgreement from '../components/agreement/userAgreement';
 
 const IndexPage = () => {
-  const [show, setShow] = useState(false);
-  const [agreementType, setAgreementType] = useState('ua');
-
-  const showAgreement = (type) => {
-    setAgreementType(type);
-    setShow(!show);
-  };
   return (
     <Layout>
       <Bodys>
@@ -52,17 +45,16 @@ const IndexPage = () => {
         <Footer>
           <p>
             <FormattedMessage id="footerText" />
-            <label onClick={() => showAgreement('ua')}>
+            <LinkTo as={Link} to="/agreement">
               <FormattedMessage id="userAgreement" />
-            </label>
+            </LinkTo>
             <FormattedMessage id="and" />
-            <label onClick={() => showAgreement('privacy')}>
+            <LinkTo as={Link} to="/privacy">
               <FormattedMessage id="privacy" />
-            </label>
+            </LinkTo>
             <FormattedMessage id="stop" />
           </p>
         </Footer>
-        {show && <UserAgreement agreementType={agreementType} showAgreement={showAgreement} />}
       </Bodys>
     </Layout>
   );
@@ -176,11 +168,16 @@ const Footer = styled.div`
   p {
     width: 100%;
     text-align: center;
-    label {
-      text-decoration: underline;
-      cursor: pointer;
-    }
   }
+`;
+
+const LinkTo = styled.div`
+  color: rgba(255, 255, 255, 0.8);
+  -webkit-user-select: none;
+  -moz-user-focus: none;
+  -moz-user-select: none;
+  text-decoration: underline;
+  cursor: pointer;
 `;
 
 export default IndexPage;

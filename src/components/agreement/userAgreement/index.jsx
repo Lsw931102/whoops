@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { FormattedMessage } from 'react-intl';
 
-const UserAgreement = ({ agreementType, showAgreement }) => {
+const UserAgreement = ({ agreementType }) => {
   const retrunTexts = () => {
     let num = agreementType == 'ua' ? 137 : 163;
     let lists = [];
@@ -18,7 +18,6 @@ const UserAgreement = ({ agreementType, showAgreement }) => {
         <p>
           <FormattedMessage id={agreementType == 'ua' ? 'uaTitle' : 'privacyTitle'} />
         </p>
-        <img src={require('../../../images/close.png')} onClick={() => showAgreement()} />
       </TitleBox>
       <ContentBox>{retrunTexts()}</ContentBox>
     </AgreementBox>
@@ -27,14 +26,9 @@ const UserAgreement = ({ agreementType, showAgreement }) => {
 
 const AgreementBox = styled.div`
   width: 700px;
-  height: 700px;
+  height: inherit;
   background: #fff;
   margin: auto;
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  top: 0;
   padding: 28px;
   box-sizing: border-box;
 `;
