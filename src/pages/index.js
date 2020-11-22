@@ -12,6 +12,7 @@ const IndexPage = () => {
       <Bodys>
         <SEO title="welcome" />
         <Header />
+        <Content>
         <Welcome as={Container}>
           <FormattedMessage id="welcome" />
         </Welcome>
@@ -55,6 +56,7 @@ const IndexPage = () => {
             <FormattedMessage id="stop" />
           </p>
         </Footer>
+        </Content>
       </Bodys>
     </Layout>
   );
@@ -66,7 +68,17 @@ const Bodys = styled.div`
   min-height: 100vh;
   background: #0a1314 url('bg.png') top center;
   background-size: cover;
+
+  @media (max-width: 960px) {
+    /* padding: 0 20px; */
+  }
 `;
+const Content = styled.div`
+  @media (max-width: 960px) {
+    padding: 0 20px;
+  }
+`;
+
 // 欢迎文字
 const Welcome = styled.div`
   text-align: center;
@@ -78,6 +90,15 @@ const Welcome = styled.div`
   line-height: 60px;
   color: #ffffff;
   margin-bottom: 40px;
+
+  @media (max-width: 960px) {
+    font-size: 30px;
+    line-height: 30px;
+    text-align: left;
+    margin-top: 50px;
+    margin-bottom: 10px;
+  }
+
 `;
 // 小标题文字
 const SubTitles = styled.div`
@@ -89,16 +110,39 @@ const SubTitles = styled.div`
   font-size: 28px;
   line-height: 28px;
   margin-bottom: 60px;
+
+  @media (max-width: 960px) {
+    font-size: 17px;
+    line-height: 17px;
+    text-align: left;
+    margin-bottom: 50px;
+  }
 `;
 // 下载按钮
 const DownLoads = styled.div`
   display: flex;
   justify-content: center;
   margin-bottom: 160px;
+
+  @media (max-width: 960px) {
+    flex-direction: column;
+    margin-bottom: 50px;
+  }
+
   img {
     width: 200px;
     height: 58px;
     margin-right: 10px;
+
+    @media (max-width: 960px) {
+      width: 166px;
+      height: 48px;
+      margin-right: 0;
+
+      &:first-child {
+        margin-bottom: 10px;
+      }
+    }
   }
 `;
 // 特色
@@ -106,17 +150,28 @@ const Characteristics = styled.div`
   display: flex;
   justify-content: space-around;
   width: 800px;
+
+  @media (max-width: 960px) {
+    flex-direction: column;
+    align-items: flex-start;
+    width: auto;
+  }
 `;
 const CharacteristicItem = styled.div`
   display: flex;
   flex-direction: column;
   color: #fff;
-  font-family: Noto Sans SC;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
   line-height: 16px;
   text-align: center;
+  @media (max-width: 960px) {
+    flex-direction: row;
+    align-items: center;
+    font-size: 14px;
+    line-height: 14px;
+  }
 `;
 const Imgs = styled.div`
   width: 100px;
@@ -126,8 +181,12 @@ const Imgs = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: auto;
-  margin-bottom: 40px;
+  margin: 0 auto 40px;
+  @media (max-width: 960px) {
+    width: 60px;
+    height: 60px;
+    margin: 0 10px 10px 0;
+  }
 `;
 const Pink = styled(CharacteristicItem)`
   border: 1px solid #b661f2;
@@ -136,6 +195,11 @@ const Pink = styled(CharacteristicItem)`
     width: 51px;
     height: 60px;
     margin: 0 auto;
+
+    @media (max-width: 960px) {
+      width: 31px;
+      height: 36px;
+    }
   }
 `;
 const Green = styled(CharacteristicItem)`
@@ -145,6 +209,11 @@ const Green = styled(CharacteristicItem)`
     width: 48px;
     height: 64px;
     margin: 0 auto;
+
+    @media (max-width: 960px) {
+      width: 29px;
+      height: 38px;
+    }
   }
 `;
 const Orange = styled(CharacteristicItem)`
@@ -154,6 +223,11 @@ const Orange = styled(CharacteristicItem)`
     width: 64px;
     height: 43px;
     margin: 0 auto;
+
+    @media (max-width: 960px) {
+      width: 38px;
+      height: 26px;
+    }
   }
 `;
 
@@ -163,11 +237,22 @@ const Footer = styled.div`
   bottom: 20px;
   color: rgba(255, 255, 255, 0.8);
   font-size: 12px;
+  line-height: 15px;
   width: 100%;
+
+  @media (max-width: 960px) {
+    position: initial;
+    width: 210px;
+    padding: 165px 0 15px 0;
+  }
 
   p {
     width: 100%;
     text-align: center;
+
+    @media (max-width: 960px) {
+      text-align: left;
+    }
   }
 `;
 

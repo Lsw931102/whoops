@@ -27,6 +27,10 @@ const Bodys = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+
+  @media (max-width: 960px) {
+    /* padding: 0 20px; */
+  }
 `;
 
 export default Agreement;

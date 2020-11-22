@@ -31,17 +31,33 @@ const AgreementBox = styled.div`
   margin: auto;
   padding: 28px;
   box-sizing: border-box;
+
+  @media (max-width: 960px) {
+    width: 100%;
+    padding: 20px;
+  }
 `;
 
 const TitleBox = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: 28px;
+
+  @media (max-width: 960px) {
+    margin-bottom: 30px;
+  }
+
   p {
     font-weight: bold;
     font-size: 28px;
     line-height: 28px;
+
+    @media (max-width: 960px) {
+      font-size: 30px;
+      line-height: 30px;
+    }
   }
+
   img {
     width: 20px;
     height: 20px;
@@ -53,6 +69,10 @@ const ContentBox = styled.div`
   width: 100%;
   height: calc(700px - 112px);
   overflow-y: auto;
+  @media (max-width: 960px) {
+    height: auto;
+    overflow-y: initial;
+  }
 
   ::-webkit-scrollbar {
     width: 6px;

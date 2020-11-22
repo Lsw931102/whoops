@@ -9,6 +9,10 @@ export const Navbar = styled.div`
   justify-content: space-between;
   padding: 20px 28px;
   align-items: center;
+
+  @media (max-width: 960px) {
+    padding: 20px;
+  }
 `;
 
 export const Links = styled.div`
@@ -30,6 +34,12 @@ export const Logo = styled.a`
   text-decoration: none;
   font-weight: bold;
   outline: none;
+  
+  @media (max-width: 960px) {
+    width: 134px;
+    height: 26px;
+  }
+
   img {
     width: 100%;
     height: 100%;
@@ -51,6 +61,10 @@ export const LangBox = styled.div`
   font-size: 14px;
   line-height: 14px;
   cursor: pointer;
+
+  @media (max-width: 960px) {
+    border-radius: 10px;
+  }
 
   img {
     width: 20px;
