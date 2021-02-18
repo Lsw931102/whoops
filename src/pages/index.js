@@ -20,8 +20,8 @@ const IndexPage = () => {
           <FormattedMessage id="sub_title" />
         </SubTitles>
         <DownLoads as={Container}>
-          <img src={require('../images/appStore.png')} />
-          <img src={`googlePay.png`} />
+          <a href="https://testflight.apple.com/join/4UlXJ55h" target="_blank"><img src={require('../images/appStore.png')} /></a>
+          <a href="http://www.whoopsio.com/download/apk/WhoopsIME_2.6_debug_2.94.apk"><img src={`googlePay.png`} /></a>
         </DownLoads>
         <Characteristics as={Container}>
           <CharacteristicItem>
@@ -55,6 +55,7 @@ const IndexPage = () => {
             </LinkTo>
             <FormattedMessage id="stop" />
           </p>
+          <Record href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank"><FormattedMessage id="record"></FormattedMessage></Record>
         </Footer>
         </Content>
       </Bodys>
@@ -233,6 +234,9 @@ const Orange = styled(CharacteristicItem)`
 
 // 底部
 const Footer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: fixed;
   bottom: 20px;
   color: rgba(255, 255, 255, 0.8);
@@ -241,18 +245,23 @@ const Footer = styled.div`
   width: 100%;
 
   @media (max-width: 960px) {
+    flex-direction: column;
+    align-items: flex-start;
     position: initial;
     width: 210px;
     padding: 165px 0 15px 0;
   }
+`;
 
-  p {
-    width: 100%;
-    text-align: center;
+const Record = styled.a`
+  margin-left: 40px;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: underline;
+  cursor: pointer;
 
-    @media (max-width: 960px) {
-      text-align: left;
-    }
+  @media (max-width: 960px) {
+    margin-left: 0;
+    margin-top: 20px;
   }
 `;
 
