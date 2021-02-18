@@ -20,9 +20,29 @@ const IndexPage = () => {
           <FormattedMessage id="sub_title" />
         </SubTitles>
         <DownLoads as={Container}>
-          <a href="https://testflight.apple.com/join/4UlXJ55h" target="_blank"><img src={require('../images/appStore.png')} /></a>
-          <a href="http://www.whoopsio.com/download/apk/WhoopsIME_2.6_debug_2.94.apk"><img src={`googlePay.png`} /></a>
+          <a href="https://apps.apple.com/app/whoops/id1526832311" target="_blank"><img src={require('../images/appStore.png')} /></a>
+          <a href="http://www.whoops.world/download/apk/WhoopsIME_release.apk"><img src={`googlePay.png`} /></a>
         </DownLoads>
+        <WeCode>
+          <CodeItem>
+            <CodeBox>
+              <CodeBorder src={require('../images/code_box.png')} />
+              <img src="http://www.whoopsio.com/image/whoops_community.jpg" />
+            </CodeBox>
+            <p>
+              <FormattedMessage id="join" />
+            </p>
+          </CodeItem>
+          <CodeItem>
+            <CodeBox>
+              <CodeBorder src={require('../images/code_box.png')} />
+              <img src={require('../images/helper_code.jpg')} />
+            </CodeBox>
+            <p>
+              <FormattedMessage id="vx" />
+            </p>
+          </CodeItem>
+        </WeCode>
         <Characteristics as={Container}>
           <CharacteristicItem>
             <Imgs as={Pink}>
@@ -69,9 +89,11 @@ const Bodys = styled.div`
   min-height: 100vh;
   background: #0a1314 url('bg.png') top center;
   background-size: cover;
+  padding-bottom: 60px;
 
   @media (max-width: 960px) {
     /* padding: 0 20px; */
+    padding-bottom: 0;
   }
 `;
 const Content = styled.div`
@@ -123,7 +145,7 @@ const SubTitles = styled.div`
 const DownLoads = styled.div`
   display: flex;
   justify-content: center;
-  margin-bottom: 160px;
+  margin-bottom: 60px;
 
   @media (max-width: 960px) {
     flex-direction: column;
@@ -144,6 +166,94 @@ const DownLoads = styled.div`
         margin-bottom: 10px;
       }
     }
+  }
+`;
+// 二维码
+const WeCode = styled.div`
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin-bottom: 52px;
+
+  @media (max-width: 960px) {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 40px;
+  }
+`;
+
+const CodeItem = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  color: #fff;
+
+  &:first-child {
+    margin-left: 0;
+    margin-top: 0;
+  }
+
+  p {
+    width: 140px;
+    font-size: 16px;
+    line-height: 20px;
+    margin-top: 12px;
+    text-align: center;
+    word-break: break-word;
+  }
+
+  
+  @media (max-width: 960px) {
+    flex-direction: row;
+    align-items: center;
+    margin-left: 0;
+    margin-top: 10px;
+
+    p {
+      width: 200px;
+      font-size: 14px;
+      line-height: 18px;
+      margin-top: 0;
+      margin-left: 10px;
+      text-align: left;
+    }
+  }
+`;
+
+const CodeBox = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 140px;
+  height: 140px;
+
+  @media (max-width: 960px) {
+    width: 130px;
+    height: 130px;
+  }
+
+  img {
+    width: 110px;
+    height: 110px;
+
+    @media (max-width: 960px) {
+      width: 115px;
+      height: 115px;
+    }
+  }
+`;
+
+const CodeBorder = styled.img`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 140px !important;
+  height: 140px !important;
+
+  @media (max-width: 960px) {
+    width: 130px !important;
+    height: 130px !important;
   }
 `;
 // 特色
@@ -249,7 +359,7 @@ const Footer = styled.div`
     align-items: flex-start;
     position: initial;
     width: 210px;
-    padding: 165px 0 15px 0;
+    padding: 30px 0 15px 0;
   }
 `;
 
