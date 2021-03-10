@@ -1,87 +1,107 @@
-import React from 'react';
-import styled from 'styled-components';
-import { Link } from 'gatsby';
-import { FormattedMessage } from 'react-intl';
-import { Layout, Container } from '../components/common';
-import SEO from '../components/common/SEO';
-import Header from '../components/theme/Header';
+import React from 'react'
+import styled from 'styled-components'
+import { Link } from 'gatsby'
+import { FormattedMessage } from 'react-intl'
+import { Layout, Container } from '../components/common'
+import SEO from '../components/common/SEO'
+import Header from '../components/theme/Header'
 
 const IndexPage = () => {
   return (
     <Layout>
       <Bodys>
-        <SEO title="welcome" />
+        <SEO title='welcome' />
         <Header />
         <Content>
-        <Welcome as={Container}>
-          <FormattedMessage id="welcome" />
-        </Welcome>
-        <SubTitles as={Container}>
-          <FormattedMessage id="sub_title" />
-        </SubTitles>
-        <DownLoads as={Container}>
-          <a href="https://apps.apple.com/app/whoops/id1526832311" target="_blank"><img src={require('../images/appStore.png')} /></a>
-          <a href="http://www.whoops.world/download/apk/WhoopsIME_release.apk"><img src={`googlePay.png`} /></a>
-        </DownLoads>
-        <WeCode>
-          <CodeItem>
-            <CodeBox>
-              <CodeBorder src={require('../images/code_box.png')} />
-              <img src="http://www.whoopsio.com/image/whoops_community.jpg" />
-            </CodeBox>
+          <Welcome as={Container}>
+            <FormattedMessage id='welcome' />
+          </Welcome>
+          <SubTitles as={Container}>
+            <FormattedMessage id='sub_title' />
+          </SubTitles>
+          <DownLoads as={Container}>
+            <DownItem
+              href='https://apps.apple.com/app/whoops/id1526832311'
+              target='_blank'
+            >
+              <img src={require('../images/icon_ios.png')} />
+              <div>
+                <p>App Store</p>
+                <p>下载</p>
+              </div>
+            </DownItem>
+            <DownItem href='http://www.whoops.world/download/apk/WhoopsIME_release.apk'>
+              <img src={require('../images/icon_android.png')} />
+              <div>
+                <p>Android</p>
+                <p>下载</p>
+              </div>
+            </DownItem>
+          </DownLoads>
+          <WeCode>
+            <CodeItem>
+              <CodeBox>
+                <CodeBorder src={require('../images/code_box.png')} />
+                <img src='http://www.whoops.world/image/whoops_community.jpg' />
+              </CodeBox>
+              <p>
+                <FormattedMessage id='join' />
+              </p>
+            </CodeItem>
+            <CodeItem>
+              <CodeBox>
+                <CodeBorder src={require('../images/code_box.png')} />
+                <img src={require('../images/helper_code.jpg')} />
+              </CodeBox>
+              <p>
+                <FormattedMessage id='vx' />
+              </p>
+            </CodeItem>
+          </WeCode>
+          <Characteristics as={Container}>
+            <CharacteristicItem>
+              <Imgs as={Pink}>
+                <img src={require('../images/security.png')} />
+              </Imgs>
+              <FormattedMessage id='security' />
+            </CharacteristicItem>
+            <CharacteristicItem>
+              <Imgs as={Green}>
+                <img src={require('../images/ids.png')} />
+              </Imgs>
+              <FormattedMessage id='ids' />
+            </CharacteristicItem>
+            <CharacteristicItem>
+              <Imgs as={Orange}>
+                <img src={require('../images/password.png')} />
+              </Imgs>
+              <FormattedMessage id='password' />
+            </CharacteristicItem>
+          </Characteristics>
+          <Footer>
             <p>
-              <FormattedMessage id="join" />
+              <FormattedMessage id='footerText' />
+              <LinkTo as={Link} to='/agreement'>
+                <FormattedMessage id='userAgreement' />
+              </LinkTo>
+              <FormattedMessage id='and' />
+              <LinkTo as={Link} to='/privacy'>
+                <FormattedMessage id='privacy' />
+              </LinkTo>
+              <FormattedMessage id='stop' />
             </p>
-          </CodeItem>
-          <CodeItem>
-            <CodeBox>
-              <CodeBorder src={require('../images/code_box.png')} />
-              <img src={require('../images/helper_code.jpg')} />
-            </CodeBox>
-            <p>
-              <FormattedMessage id="vx" />
-            </p>
-          </CodeItem>
-        </WeCode>
-        <Characteristics as={Container}>
-          <CharacteristicItem>
-            <Imgs as={Pink}>
-              <img src={require('../images/security.png')} />
-            </Imgs>
-            <FormattedMessage id="security" />
-          </CharacteristicItem>
-          <CharacteristicItem>
-            <Imgs as={Green}>
-              <img src={require('../images/ids.png')} />
-            </Imgs>
-            <FormattedMessage id="ids" />
-          </CharacteristicItem>
-          <CharacteristicItem>
-            <Imgs as={Orange}>
-              <img src={require('../images/password.png')} />
-            </Imgs>
-            <FormattedMessage id="password" />
-          </CharacteristicItem>
-        </Characteristics>
-        <Footer>
-          <p>
-            <FormattedMessage id="footerText" />
-            <LinkTo as={Link} to="/agreement">
-              <FormattedMessage id="userAgreement" />
-            </LinkTo>
-            <FormattedMessage id="and" />
-            <LinkTo as={Link} to="/privacy">
-              <FormattedMessage id="privacy" />
-            </LinkTo>
-            <FormattedMessage id="stop" />
-          </p>
-          <Record href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank"><FormattedMessage id="record"></FormattedMessage></Record>
-        </Footer>
+            <Record
+              href='https://beian.miit.gov.cn/#/Integrated/index'
+              target='_blank'
+            >
+              <FormattedMessage id='record'></FormattedMessage>
+            </Record>
+          </Footer>
         </Content>
       </Bodys>
     </Layout>
-  );
-};
+  )
+}
 
 // 整体背景
 const Bodys = styled.div`
@@ -95,12 +115,12 @@ const Bodys = styled.div`
     /* padding: 0 20px; */
     padding-bottom: 0;
   }
-`;
+`
 const Content = styled.div`
   @media (max-width: 960px) {
     padding: 0 20px;
   }
-`;
+`
 
 // 欢迎文字
 const Welcome = styled.div`
@@ -121,8 +141,7 @@ const Welcome = styled.div`
     margin-top: 50px;
     margin-bottom: 10px;
   }
-
-`;
+`
 // 小标题文字
 const SubTitles = styled.div`
   text-align: center;
@@ -140,34 +159,81 @@ const SubTitles = styled.div`
     text-align: left;
     margin-bottom: 50px;
   }
-`;
+`
 // 下载按钮
 const DownLoads = styled.div`
   display: flex;
   justify-content: center;
+  align-items: center;
   margin-bottom: 60px;
 
   @media (max-width: 960px) {
     flex-direction: column;
+    align-items: initial;
     margin-bottom: 50px;
+  }
+`
+const DownItem = styled.a`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 172px;
+  height: 60px;
+  background: #000000;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+
+  @media (max-width: 960px) {
+    width: 143px;
+    height: 50px;
+  }
+
+  &:first-child {
+    margin-right: 8px;
+
+    @media (max-width: 960px) {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
   }
 
   img {
-    width: 200px;
-    height: 58px;
-    margin-right: 10px;
+    width: 40px;
+    height: 40px;
+    margin-right: 8px;
 
     @media (max-width: 960px) {
-      width: 166px;
-      height: 48px;
-      margin-right: 0;
-
-      &:first-child {
-        margin-bottom: 10px;
-      }
+      margin-right: 6px;
     }
   }
-`;
+
+  div {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 20px;
+
+    p {
+      &:last-child {
+        margin-top: 6px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 14px;
+
+        @media (max-width: 960px) {
+          font-size: 12px;
+          line-height: 12px;
+        }
+      }
+    }
+
+    @media (max-width: 960px) {
+      font-size: 18px;
+      line-height: 18px;
+    }
+  }
+`
 // 二维码
 const WeCode = styled.div`
   display: flex;
@@ -180,7 +246,7 @@ const WeCode = styled.div`
     align-items: flex-start;
     margin-bottom: 40px;
   }
-`;
+`
 
 const CodeItem = styled.div`
   display: flex;
@@ -202,7 +268,6 @@ const CodeItem = styled.div`
     word-break: break-word;
   }
 
-  
   @media (max-width: 960px) {
     flex-direction: row;
     align-items: center;
@@ -218,7 +283,7 @@ const CodeItem = styled.div`
       text-align: left;
     }
   }
-`;
+`
 
 const CodeBox = styled.div`
   position: relative;
@@ -242,7 +307,7 @@ const CodeBox = styled.div`
       height: 115px;
     }
   }
-`;
+`
 
 const CodeBorder = styled.img`
   position: absolute;
@@ -255,7 +320,7 @@ const CodeBorder = styled.img`
     width: 130px !important;
     height: 130px !important;
   }
-`;
+`
 // 特色
 const Characteristics = styled.div`
   display: flex;
@@ -267,7 +332,7 @@ const Characteristics = styled.div`
     align-items: flex-start;
     width: auto;
   }
-`;
+`
 const CharacteristicItem = styled.div`
   display: flex;
   flex-direction: column;
@@ -283,7 +348,7 @@ const CharacteristicItem = styled.div`
     font-size: 14px;
     line-height: 14px;
   }
-`;
+`
 const Imgs = styled.div`
   width: 100px;
   height: 100px;
@@ -298,7 +363,7 @@ const Imgs = styled.div`
     height: 60px;
     margin: 0 10px 10px 0;
   }
-`;
+`
 const Pink = styled(CharacteristicItem)`
   border: 1px solid #b661f2;
   img {
@@ -312,7 +377,7 @@ const Pink = styled(CharacteristicItem)`
       height: 36px;
     }
   }
-`;
+`
 const Green = styled(CharacteristicItem)`
   border: 1px solid #61f2be;
   img {
@@ -326,7 +391,7 @@ const Green = styled(CharacteristicItem)`
       height: 38px;
     }
   }
-`;
+`
 const Orange = styled(CharacteristicItem)`
   border: 1px solid #f27961;
   img {
@@ -340,7 +405,7 @@ const Orange = styled(CharacteristicItem)`
       height: 26px;
     }
   }
-`;
+`
 
 // 底部
 const Footer = styled.div`
@@ -361,7 +426,7 @@ const Footer = styled.div`
     width: 210px;
     padding: 30px 0 15px 0;
   }
-`;
+`
 
 const Record = styled.a`
   margin-left: 40px;
@@ -373,7 +438,7 @@ const Record = styled.a`
     margin-left: 0;
     margin-top: 20px;
   }
-`;
+`
 
 const LinkTo = styled.div`
   color: rgba(255, 255, 255, 0.8);
@@ -382,6 +447,6 @@ const LinkTo = styled.div`
   -moz-user-select: none;
   text-decoration: underline;
   cursor: pointer;
-`;
+`
 
-export default IndexPage;
+export default IndexPage
