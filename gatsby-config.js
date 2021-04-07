@@ -5,7 +5,7 @@ module.exports = {
     site_url: config.url,
     title: `Whoops`,
     description: `Privacy Protection`,
-    author: `whoops`
+    author: `Zero One`
   },
   plugins: [
     'gatsby-plugin-react-helmet',

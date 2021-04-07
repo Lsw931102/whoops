@@ -1,5 +1,5 @@
 module.exports = {
-	title: 'gatsby-starter-i18n',
+	title: 'Whoops Privacy Input',
 	logo: 'https://i18n.smakosh.com/favicon/logo-48.png',
 	url: 'https://i18n.smakosh.com',
 	favicon: 'https://i18n.smakosh.com/favicon/logo-48.png',

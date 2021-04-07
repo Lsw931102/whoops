@@ -27,14 +27,14 @@ const IndexPage = () => {
               <img src={require('../images/icon_ios.png')} />
               <div>
                 <p>App Store</p>
-                <p>下载</p>
+                <p><FormattedMessage id='download' /></p>
               </div>
             </DownItem>
             <DownItem href='http://apk.whoopsio.com/WhoopsIME_release.apk'>
               <img src={require('../images/icon_android.png')} />
               <div>
                 <p>Android</p>
-                <p>下载</p>
+                <p><FormattedMessage id='download' /></p>
               </div>
             </DownItem>
           </DownLoads>
