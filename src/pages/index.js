@@ -30,7 +30,7 @@ const IndexPage = () => {
                 <p><FormattedMessage id='download' /></p>
               </div>
             </DownItem>
-            <DownItem href='http://apk.whoopsio.com/WhoopsIME_release.apk'>
+            <DownItem href='http://apk.whoops.world/WhoopsIME_release.apk'>
               <img src={require('../images/icon_android.png')} />
               <div>
                 <p>Android</p>
